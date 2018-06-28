@@ -1,0 +1,91 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.background {
+    background: url(wallpaper2you_226436.jpg) 0 0 repeat-x;
+    background-size: 1442px 100vh;
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+    position: absolute;
+
+    animation: camp 5s linear  infinite;
+}
+
+@keyframes camp {
+    from{
+        background-position: 0 0;
+    }
+    to{
+        background-position: 1442px 0;
+    }
+
+}
+
+
+.tuna {
+    /* use the timing function steps() to chunk the animation into 12 equal pieces */
+    position: absolute;
+    top: 460px;
+    bottom: 0;
+    margin: auto;
+
+    background: url(cat_sprite.png) 0 0 no-repeat; 
+    height: 200px;
+    width: 400px;
+   
+    overflow: hidden;
+
+    animation: walk 1s steps(12) 1, 
+               jog 1s steps(12) 1 1s, 
+               run 1s steps(13) infinite 2s,
+               runacross 5s linear infinite;
+  }
+
+ 
+
+ /* Don't forget: You'll need an @keyframes block to change the background image's position! */
+
+ @keyframes walk {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -2400px;
+    }
+}
+
+@keyframes jog {
+    from {
+        background-position: -400px 0;
+    }
+    to {
+        background-position: -400px -2400px;
+    }
+}
+
+@keyframes run {
+    from {
+        background-position: -800px 0;
+    }
+    to {
+        background-position: -800px -2591px;
+    }
+}
+
+@keyframes runacross {
+    from {
+        left: 100%;
+    }
+
+    to{
+        left: -400px;
+
+    }
+}
+
